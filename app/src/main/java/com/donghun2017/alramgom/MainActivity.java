@@ -1,5 +1,7 @@
 package com.donghun2017.alramgom;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -12,6 +14,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.View;
+import android.widget.Switch;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,15 +28,12 @@ public class MainActivity extends AppCompatActivity {
     ViewPager pager;
     PagerAdapter pagerAdapter;
 
-
     TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/NanumPen.ttf");
 
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -53,23 +56,18 @@ public class MainActivity extends AppCompatActivity {
 
         tabLayout.setupWithViewPager(pager, true);
 
-
-
-
-
-
-
-
-
-
     }
-
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.actionbar_menu, menu);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    public void clickRe(View v){
+        Intent intent = new Intent(v.getContext(), RepeatAddActivity.class);
+        startActivity(intent);
     }
 
 

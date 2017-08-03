@@ -1,6 +1,7 @@
 package com.donghun2017.alramgom;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -27,6 +28,7 @@ public class Tab1Fragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         items.add(new WakeUpAlarmItem(true, "05:31 오전", "월 화 수", "아이유", false, false, 1, R.mipmap.ic_launcher));
+        items.add(new WakeUpAlarmItem(true, "11:50 오후", "월 화 수", "아이유", false, false, 1, R.mipmap.ic_launcher));
 
     }
 
@@ -36,20 +38,17 @@ public class Tab1Fragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_tab1, container, false);
 
+
         wakeUpRecyclerView = (RecyclerView)view.findViewById(R.id.recycler_alarm);
         wakeUpAlarmAdapter = new WakeUpAlarmAdapter(items, getActivity());
         wakeUpRecyclerView.setAdapter(wakeUpAlarmAdapter);
         layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         wakeUpRecyclerView.setLayoutManager(layoutManager);
 
+
+
         return view;
 
     }
-
-
-
-
-
-
 
 }

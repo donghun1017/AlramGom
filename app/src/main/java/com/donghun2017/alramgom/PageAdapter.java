@@ -3,6 +3,7 @@ package com.donghun2017.alramgom;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.view.View;
 
 public class PageAdapter extends FragmentPagerAdapter {
 
@@ -33,4 +34,5 @@ public class PageAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         return titles[position];
     }
+
 }

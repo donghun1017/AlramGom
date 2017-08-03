@@ -20,9 +20,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="?android:attr/actionBarSize"
                 app:layout_scrollFlags="scroll|enterAlways"
-                android:background="#00897B"
+                android:background="#00857B"
                 app:titleTextColor="#ffffff"
-                android:elevation="12dp">
+                android:elevation="12dp"
+                app:contentInsetStart="0dp">
+
+                <TextView
+                    android:id="@+id/toolbaTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="AlarmGom"
+                    android:textSize="24sp"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText"/>
 
             </android.support.v7.widget.Toolbar>
 
@@ -33,7 +45,8 @@
                 android:background="#00897B"
                 app:tabTextColor="#ffffff"
                 app:tabMode="fixed"
-                android:elevation="8dp">
+                android:elevation="8dp"
+                app:tabIndicatorColor="@color/white">
 
             </android.support.design.widget.TabLayout>
 
