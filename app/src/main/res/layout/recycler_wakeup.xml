@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:gravity="center_vertical">
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="12dp"/>
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/checkbox"
+        android:layout_marginLeft="8dp"
+        android:text="5:20 오전"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/week"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/checkbox"
+        android:layout_below="@+id/time"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="12dp"
+        android:text="월 화 수 목 금 토 일"
+        android:textSize="12sp"/>
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="12dp"/>
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/img"
+        android:text="특정일\n알람해제"
+        android:layout_marginRight="8dp"/>
+
+
+
+
+</RelativeLayout>
