@@ -65,6 +65,11 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    public void clickOne(View v){
+        Intent intent = new Intent(v.getContext(), OneOffAddActivity.class);
+        startActivity(intent);
+    }
+
     public void clickRe(View v){
         Intent intent = new Intent(v.getContext(), RepeatAddActivity.class);
         startActivity(intent);
