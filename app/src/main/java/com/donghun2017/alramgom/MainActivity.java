@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout.addDrawerListener(drawerToggle);
         drawerToggle.syncState();
 
+
         tabLayout = (TabLayout)findViewById(R.id.layout_tab);
 
         pager = (ViewPager)findViewById(R.id.pager);

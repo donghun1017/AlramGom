@@ -7,15 +7,14 @@ import android.view.View;
 
 public class PageAdapter extends FragmentPagerAdapter {
 
-    Fragment[] frgs = new Fragment[3];
-    String[] titles = new String[]{"기상알람", "수면알람", "빗소리"};
+    Fragment[] frgs = new Fragment[2];
+    String[] titles = new String[]{"알람", "빗소리"};
 
     public PageAdapter(FragmentManager fm) {
         super(fm);
 
         frgs[0] = new Tab1Fragment();
         frgs[1] = new Tab2Fragment();
-        frgs[2] = new Tab3Fragment();
 
 
     }

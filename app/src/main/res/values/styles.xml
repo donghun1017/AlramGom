@@ -10,8 +10,7 @@
     </style>
 
     <style name="AppTheme.Appbar">
-        <item name="titleTextColor">#FFFFFF</item>
-        <item name="colorControlNormal">#009688</item>
+       <item name="colorControlNormal">#009688</item>
     </style>
 
 

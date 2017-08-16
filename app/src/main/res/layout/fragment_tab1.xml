@@ -18,7 +18,7 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:onClick="clickOne"
-            android:text="1회 알람 추가"
+            android:text="간단알람 추가"
             android:background="#F0F2F1"
             android:layout_margin="6dp"/>
 
@@ -28,7 +28,7 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:onClick="clickRe"
-            android:text="반복 알람 추가"
+            android:text="알람 추가"
             android:background="#F0F2F1"
             android:layout_margin="6dp"/>
 

@@ -5,18 +5,13 @@
     android:orientation="vertical"
     tools:context="com.donghun2017.alramgom.Tab2Fragment">
 
-    <!-- TODO: Update blank fragment layout -->
+   <ListView
+       android:id="@+id/listView2"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_margin="4dp">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_blank_fragment" />
-
-
-
-
-
-
+   </ListView>
 
 
 </LinearLayout>

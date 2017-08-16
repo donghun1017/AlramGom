@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="4dp"
+    android:background="#ffffff"
+    android:id="@+id/sound_backGround">
+
+    <TextView
+        android:id="@+id/sound_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="폭풍우"
+        android:textSize="32sp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="12dp"
+        />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/sound_img"
+        android:layout_width="84dp"
+        android:layout_height="84dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="8dp"
+        android:src="@mipmap/ic_launcher_round"/>
+
+</RelativeLayout>

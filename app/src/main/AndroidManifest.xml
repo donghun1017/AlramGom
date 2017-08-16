@@ -20,9 +20,20 @@
             </intent-filter>
         </activity>
         <activity android:name=".RepeatAddActivity" />
-        <activity android:name=".OneOffAddActivity">
-
-        </activity>
+        <activity android:name=".OneOffAddActivity" />
+        <activity android:name=".Sound1Activity" />
+        <activity android:name=".Sound2Activity" />
+        <activity android:name=".Sound3Activity" />
+        <activity android:name=".Sound4Activity" />
+        <activity android:name=".Sound5Activity" />
+        <activity android:name=".Sound6Activity" />
+        <activity android:name=".Sound7Activity" />
+        <activity android:name=".Sound8Activity" />
+        <activity android:name=".Sound9Activity" />
+        <activity android:name=".Sound10Activity" />
+        <activity android:name=".Sound11Activity" />
+        <activity android:name=".Sound12Activity" />
+        <activity android:name=".Sound13Activity"></activity>
     </application>
 
 </manifest>
