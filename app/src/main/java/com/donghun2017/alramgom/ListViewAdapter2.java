@@ -20,6 +20,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ListViewAdapter2 extends BaseAdapter {
 
+    CircleImageView circleImageView;
+    TextView textView;
+
     ArrayList<ListViewItem2> members;
     LayoutInflater inflater;
 
@@ -51,15 +54,15 @@ public class ListViewAdapter2 extends BaseAdapter {
         }
 
         ListViewItem2 member = members.get(position);
+
         String title = member.getTitle();
         int titleImg = member.getTitleImg();
 
-        TextView textView = (TextView)convertView.findViewById(R.id.sound_text);
-        CircleImageView circleImageView = (CircleImageView) convertView.findViewById(R.id.sound_img);
+        textView = (TextView)convertView.findViewById(R.id.sound_text);
+        circleImageView = (CircleImageView) convertView.findViewById(R.id.sound_img);
 
         textView.setText(title);
         Glide.with(convertView).load(titleImg).into(circleImageView);
-
 
 
         /////////////여기부터임

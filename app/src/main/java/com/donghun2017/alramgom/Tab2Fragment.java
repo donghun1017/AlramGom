@@ -35,8 +35,9 @@ public class Tab2Fragment extends Fragment {
         members.add(new ListViewItem2("잔잔한 물결", R.drawable.sound9));
         members.add(new ListViewItem2("텐트 위의 빗소리", R.drawable.sound10));
         members.add(new ListViewItem2("바다의 빗소리", R.drawable.sound11));
-        members.add(new ListViewItem2("지붕에 비", R.drawable.sound12));
+        members.add(new ListViewItem2("지붕 위의 빗소리", R.drawable.sound12));
         members.add(new ListViewItem2("뇌우", R.drawable.sound13));
+
 
         }
 

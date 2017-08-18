@@ -25,9 +25,9 @@ public class ListViewItem2 {
     }
 
     public ListViewItem2(String title, int titleImg) {
+
         Title = title;
         TitleImg = titleImg;
-
     }
 }
 
