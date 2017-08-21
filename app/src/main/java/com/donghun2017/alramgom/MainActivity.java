@@ -1,5 +1,6 @@
 package com.donghun2017.alramgom;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -10,6 +11,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -30,28 +32,30 @@ public class MainActivity extends AppCompatActivity {
 
     TabLayout tabLayout;
 
+    Dialog dialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         drawerLayout = (DrawerLayout) findViewById(R.id.layout_drawer);
-        navView = (NavigationView)findViewById(R.id.view_nav);
+        navView = (NavigationView) findViewById(R.id.view_nav);
 
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.app_name, R.string.app_name);
         drawerLayout.addDrawerListener(drawerToggle);
         drawerToggle.syncState();
 
 
-        tabLayout = (TabLayout)findViewById(R.id.layout_tab);
+        tabLayout = (TabLayout) findViewById(R.id.layout_tab);
 
-        pager = (ViewPager)findViewById(R.id.pager);
+        pager = (ViewPager) findViewById(R.id.pager);
         pagerAdapter = new PageAdapter(getSupportFragmentManager());
         pager.setAdapter(pagerAdapter);
 
@@ -66,12 +70,12 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    public void clickOne(View v){
+    public void clickOne(View v) {
         Intent intent = new Intent(v.getContext(), OneOffAddActivity.class);
         startActivity(intent);
     }
 
-    public void clickRe(View v){
+    public void clickRe(View v) {
         Intent intent = new Intent(v.getContext(), RepeatAddActivity.class);
         startActivity(intent);
     }
