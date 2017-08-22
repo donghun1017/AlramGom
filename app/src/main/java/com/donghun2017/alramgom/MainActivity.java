@@ -72,7 +72,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void clickOne(View v) {
         Intent intent = new Intent(v.getContext(), OneOffAddActivity.class);
-        startActivity(intent);
+        startActivityForResult(intent, 10);
+
     }
 
     public void clickRe(View v) {

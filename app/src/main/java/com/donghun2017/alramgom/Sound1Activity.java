@@ -17,6 +17,7 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.bumptech.glide.Glide;
@@ -41,6 +42,12 @@ public class Sound1Activity extends AppCompatActivity {
     int max;
     int currentVolume;
 
+    WatchThread watchThread;
+    int min = 00;
+    int sec = 00;
+
+    boolean isrunning = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,18 +56,17 @@ public class Sound1Activity extends AppCompatActivity {
         mp3 = MediaPlayer.create(this, R.raw.rain_sound1);
         mp3.setLooping(true);
 
-        toggleSound = (ToggleButton)findViewById(R.id.toggle_music);
+        toggleSound = (ToggleButton) findViewById(R.id.toggle_music);
         toggleSound.setOnCheckedChangeListener(changeListener);
 
-        sb = (SeekBar)findViewById(R.id.seekbar1);
+        sb = (SeekBar) findViewById(R.id.seekbar1);
 
-        audioManager = (AudioManager)getSystemService(AUDIO_SERVICE);
+        audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
         max = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
         currentVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
 
         sb.setMax(max);
         sb.setProgress(currentVolume);
-
 
 
         sb.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -84,19 +90,19 @@ public class Sound1Activity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
-        if(mp3!=null && !mp3.isPlaying()){
+        if (mp3 != null && !mp3.isPlaying()) {
             mp3.setVolume(leftVolume, rightVolume);
             mp3.start();
         }
         super.onResume();
     }
 
-    public void clickToggle(View v){
-        if(mp3 != null && mp3.isPlaying()) mp3.pause();
+    public void clickToggle(View v) {
+        if (mp3 != null && mp3.isPlaying()) mp3.pause();
         else mp3.start();
     }
 
-    public void clickToggle2(View v){
+    public void clickToggle2(View v) {
         builder = new AlertDialog.Builder(this);
         builder.setTitle("타이머 시간 설정");
         view = getLayoutInflater().inflate(R.layout.timer, null);
@@ -104,16 +110,16 @@ public class Sound1Activity extends AppCompatActivity {
         dialog = builder.create();
         dialog.show();
 
-        clock = (ImageView)findViewById(R.id.toggle_timer);
-        clockTime = (TextView)findViewById(R.id.timer_text);
+        clock = (ImageView) findViewById(R.id.toggle_timer);
+        clockTime = (TextView) findViewById(R.id.timer_text);
     }
 
     @Override
     protected void onDestroy() {
-        if(mp3 != null){
+        if (mp3 != null) {
             mp3.stop();
             mp3.release();
-            mp3=null;
+            mp3 = null;
         }
 
         super.onDestroy();
@@ -124,7 +130,7 @@ public class Sound1Activity extends AppCompatActivity {
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
             switch (buttonView.getId()) {
                 case R.id.toggle_music:
-                    if(toggleSound.isChecked())toggleSound.setChecked(true);
+                    if (toggleSound.isChecked()) toggleSound.setChecked(true);
                     else toggleSound.setChecked(false);
 
                     break;
@@ -132,20 +138,78 @@ public class Sound1Activity extends AppCompatActivity {
         }
     };
 
-    public void clickTimer1(View v){
+    public void clickTimer1(View v) {
+        if (!mp3.isPlaying()) {
+            mp3.start();
+            toggleSound.setChecked(false);
+        }
         dialog.dismiss();
         clock.setVisibility(View.VISIBLE);
         clockTime.setVisibility(View.GONE);
+
     }
-    public void clickTimer2(View v){
+
+    public void clickTimer2(View v) {
+        if (!mp3.isPlaying()) {
+            mp3.start();
+            toggleSound.setChecked(false);
+        }
         dialog.dismiss();
         clock.setVisibility(View.GONE);
         clockTime.setVisibility(View.VISIBLE);
 
-    }
-    public void clickTimer3(View v){
+        watchThread = new WatchThread();
+        sec = 10;
+        watchThread.start();
+
+}
+
+    public void clickTimer3(View v) {
         dialog.dismiss();
     }
+
+
+class WatchThread extends Thread {
+
+    @Override
+    public void run() {
+
+        while (sec > -1) {
+
+            sec--;
+
+            runOnUiThread(new Runnable() {
+
+                @Override
+                public void run() {
+                    String watch = String.format("%02d:%02d", min, sec);
+                    clockTime.setText(watch);
+
+                    if (sec < 0) {
+                        clockTime.setVisibility(View.GONE);
+                        clock.setVisibility(View.VISIBLE);
+
+                        if (mp3 != null) {
+                            mp3.pause();
+                            toggleSound.setChecked(true);
+
+                        }
+                    }
+                }
+
+            });
+
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+    }//runMethod
+
+}//WatchThread
 
 
 }
