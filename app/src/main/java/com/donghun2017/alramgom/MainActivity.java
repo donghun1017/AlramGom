@@ -21,6 +21,8 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     TabLayout tabLayout;
 
-    Dialog dialog;
+    ArrayList<WakeUpAlarmItem> items = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout.addDrawerListener(drawerToggle);
         drawerToggle.syncState();
 
-
         tabLayout = (TabLayout) findViewById(R.id.layout_tab);
 
         pager = (ViewPager) findViewById(R.id.pager);
@@ -63,23 +64,33 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.actionbar_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
-    public void clickOne(View v) {
+    public void clickOneOff(View v) {
         Intent intent = new Intent(v.getContext(), OneOffAddActivity.class);
         startActivityForResult(intent, 10);
 
     }
 
-    public void clickRe(View v) {
-        Intent intent = new Intent(v.getContext(), RepeatAddActivity.class);
-        startActivity(intent);
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode) {
+            case 10:
+                if(resultCode==RESULT_OK){
+                    items.add(new WakeUpAlarmItem(true, "10:00 오전", "9분 뒤", "아이유", false, false, 1, R.mipmap.ic_launcher));
+
+                    pagerAdapter.notifyDataSetChanged();
+                }
+
+                break;
+        }
+
+
     }
-
-
 }

@@ -11,8 +11,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import static android.app.Activity.RESULT_OK;
 
 
 public class Tab1Fragment extends Fragment {
@@ -23,6 +27,10 @@ public class Tab1Fragment extends Fragment {
     RecyclerView wakeUpRecyclerView;
     RecyclerView.LayoutManager layoutManager;
 
+    Button btnOneOff, btnRe;
+
+    int min;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +38,6 @@ public class Tab1Fragment extends Fragment {
         items.add(new WakeUpAlarmItem(true, "10:00 오전", "9분 뒤", "아이유", false, false, 1, R.mipmap.ic_launcher));
         items.add(new WakeUpAlarmItem(true, "05:31 오전", "월 화 수", "아이유", false, false, 1, R.mipmap.ic_launcher));
         items.add(new WakeUpAlarmItem(true, "11:50 오후", "월 화 수", "아이유", false, false, 1, R.mipmap.ic_launcher));
-
 
     }
 
@@ -46,10 +53,41 @@ public class Tab1Fragment extends Fragment {
         layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         wakeUpRecyclerView.setLayoutManager(layoutManager);
 
+        btnOneOff = (Button)view.findViewById(R.id.wakeUp_oneOff);
+        btnRe = (Button)view.findViewById(R.id.wakeUp_Repeat);
+
+//        btnOneOff.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(v.getContext(), OneOffAddActivity.class);
+//                startActivityForResult(intent, 10);
+//            }
+//        });
+
+        btnRe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), RepeatAddActivity.class);
+                startActivity(intent);
+            }
+        });
+
         return view;
 
     }
 
-
-
+//    @Override
+//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//
+//        switch (requestCode){
+//            case 10:
+//                if(resultCode==RESULT_OK){
+//                    min= data.getIntExtra("Min", 0);
+//                    Toast.makeText(getActivity(), min+"", Toast.LENGTH_SHORT).show();
+//                    items.add(new WakeUpAlarmItem(true, "10:00 오전", min+"", "아이유", false, false, 1, R.mipmap.ic_launcher));
+//                }
+//                break;
+//        }
+//    }
 }

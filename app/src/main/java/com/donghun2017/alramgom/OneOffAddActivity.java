@@ -54,6 +54,9 @@ public class OneOffAddActivity extends AppCompatActivity {
     }
 
     public void clickOneOffCheck(View v){
+        Intent intent = getIntent();
+        intent.putExtra("Min", min);
+        setResult(RESULT_OK, intent);
         finish();
     }
 
