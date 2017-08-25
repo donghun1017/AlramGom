@@ -70,27 +70,4 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    public void clickOneOff(View v) {
-        Intent intent = new Intent(v.getContext(), OneOffAddActivity.class);
-        startActivityForResult(intent, 10);
-
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        switch (requestCode) {
-            case 10:
-                if(resultCode==RESULT_OK){
-                    items.add(new WakeUpAlarmItem(true, "10:00 오전", "9분 뒤", "아이유", false, false, 1, R.mipmap.ic_launcher));
-
-                    pagerAdapter.notifyDataSetChanged();
-                }
-
-                break;
-        }
-
-
-    }
 }

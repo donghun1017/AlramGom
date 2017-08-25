@@ -15,7 +15,7 @@
             android:id="@+id/time"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/checkbox"
+            android:layout_toRightOf="@+id/checkBox"
             android:layout_marginLeft="4dp"
             android:layout_marginTop="10dp"
             android:text="5:20 오전"
@@ -40,10 +40,11 @@
             android:layout_marginRight="8dp"/>
 
         <CheckBox
-            android:id="@+id/checkbox"
+            android:id="@+id/checkBox"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_marginLeft="12dp" />
+            android:layout_marginLeft="12dp"
+            android:checked="true"/>
 
         <TextView
             android:id="@+id/week"
@@ -52,7 +53,7 @@
             android:layout_below="@+id/time"
             android:layout_marginLeft="4dp"
             android:layout_marginTop="4dp"
-            android:layout_toRightOf="@+id/checkbox"
+            android:layout_toRightOf="@+id/checkBox"
             android:text="월 화 수 목 금 토 일"
             android:textSize="12sp" />
 

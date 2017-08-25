@@ -1,10 +1,14 @@
 package com.donghun2017.alramgom;
 
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -53,12 +57,20 @@ public class WakeUpAlarmAdapter extends RecyclerView.Adapter<WakeUpAlarmAdapter.
         TextView week;
         ImageView alarmImg;
 
+
         public ViewHolder(View itemView) {
             super(itemView);
 
             time = (TextView)itemView.findViewById(R.id.time);
             week = (TextView)itemView.findViewById(R.id.week);
             alarmImg = (ImageView)itemView.findViewById(R.id.img);
+
         }
+
+
     }
+
+
+
+
 }

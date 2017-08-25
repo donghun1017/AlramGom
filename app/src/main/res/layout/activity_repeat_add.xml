@@ -35,6 +35,7 @@
         android:layout_below="@+id/id_toolbar">
 
         <RelativeLayout
+            android:id="@+id/Theme4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="12dp"
@@ -49,11 +50,12 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:layout_marginTop="4dp"
                 android:id="@+id/text_time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/time_id"
-                android:text="6:50 오전"
+                android:text="시간을 설정해주세요."
                 android:textColor="@color/green"
                 android:textSize="16sp" />
 
@@ -72,8 +74,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
             android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp"
-            android:onClick="clickWeek">
+            android:layout_marginRight="12dp">
 
             <TextView
                 android:id="@+id/week_id"
@@ -83,19 +84,108 @@
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/text_week"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <ToggleButton
+                android:id="@+id/toggle_monday"
+                android:layout_width="36dp"
+                android:layout_height="38dp"
+                android:textOn="월"
+                android:textOff="월"
+                android:textStyle="bold"
+                android:background="@android:color/transparent"
+                android:textSize="18sp"
+                android:textColor="#757575"
                 android:layout_below="@+id/week_id"
-                android:text="월 화 수 목 금 토 일"
-                android:textColor="@color/green"
-                android:textSize="16sp" />
+                android:checked="false"/>
+
+            <ToggleButton
+                android:id="@+id/toggle_tuesday"
+                android:layout_width="36dp"
+                android:layout_height="38dp"
+                android:textOn="화"
+                android:textOff="화"
+                android:background="@android:color/transparent"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#757575"
+                android:layout_below="@+id/week_id"
+                android:layout_toRightOf="@+id/toggle_monday"
+                android:checked="false"/>
+
+            <ToggleButton
+                android:id="@+id/toggle_wednesday"
+                android:layout_width="36dp"
+                android:layout_height="38dp"
+                android:textOn="수"
+                android:textOff="수"
+                android:textColor="#757575"
+                android:background="@android:color/transparent"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_below="@+id/week_id"
+                android:layout_toRightOf="@+id/toggle_tuesday"
+                android:checked="false"/>
+
+            <ToggleButton
+                android:id="@+id/toggle_thursday"
+                android:layout_width="36dp"
+                android:layout_height="38dp"
+                android:textOn="목"
+                android:textOff="목"
+                android:textStyle="bold"
+                android:background="@android:color/transparent"
+                android:textSize="18sp"
+                android:textColor="#757575"
+                android:layout_below="@+id/week_id"
+                android:layout_toRightOf="@+id/toggle_wednesday"
+                android:checked="false"/>
+
+            <ToggleButton
+                android:id="@+id/toggle_friday"
+                android:layout_width="36dp"
+                android:layout_height="38dp"
+                android:textOn="금"
+                android:textOff="금"
+                android:background="@android:color/transparent"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#757575"
+                android:layout_below="@+id/week_id"
+                android:layout_toRightOf="@+id/toggle_thursday"
+                android:checked="false"/>
+
+            <ToggleButton
+                android:id="@+id/toggle_saturday"
+                android:layout_width="36dp"
+                android:layout_height="38dp"
+                android:textOn="토"
+                android:textOff="토"
+                android:background="@android:color/transparent"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#757575"
+                android:layout_below="@+id/week_id"
+                android:layout_toRightOf="@+id/toggle_friday"
+                android:checked="false"/>
+
+            <ToggleButton
+                android:id="@+id/toggle_sunday"
+                android:layout_width="36dp"
+                android:layout_height="38dp"
+                android:textOn="일"
+                android:textOff="일"
+                android:background="@android:color/transparent"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#757575"
+                android:layout_below="@+id/week_id"
+                android:layout_toRightOf="@+id/toggle_saturday"
+                android:checked="false"/>
+
 
             <Button
                 android:id="@+id/select_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="78dp"
+                android:layout_height="60dp"
                 android:layout_alignParentRight="true"
                 android:background="@drawable/bg_border_stroke"
                 android:text="특정일 알람\n사용안함" />
@@ -103,7 +193,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:layout_below="@+id/select_btn"
+                android:layout_below="@+id/toggle_monday"
                 android:layout_marginTop="4dp"
                 android:background="@drawable/bg_border_stroke" />
 
@@ -127,11 +217,12 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:layout_marginTop="4dp"
                 android:id="@+id/text_ring"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ring_id"
-                android:text="김광석 - 너무 아픈 사랑은 사랑이 아니었음을"
+                android:text="Basic Bell"
                 android:textColor="@color/green"
                 android:textSize="16sp"/>
 
@@ -163,7 +254,7 @@
             <ToggleButton
                 android:id="@+id/vibra_toggle"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_alignParentRight="true"
                 android:background="@drawable/bg_border_stroke" />
 
@@ -171,42 +262,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:layout_below="@+id/vibra_toggle"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="14dp"
                 android:background="@drawable/bg_border_stroke" />
 
         </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:text="무음모드"
-                android:textColor="#000000"
-                android:textSize="20sp" />
-
-            <ToggleButton
-                android:id="@+id/silent_toggle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:background="@drawable/bg_border_stroke" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_below="@+id/silent_toggle"
-                android:layout_marginTop="4dp"
-                android:background="@drawable/bg_border_stroke" />
-
-        </RelativeLayout>
-
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -224,6 +283,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:layout_marginTop="4dp"
                 android:id="@+id/text_clear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -252,7 +312,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="8dp"
             android:layout_marginLeft="12dp"
             android:layout_marginRight="12dp">
 
@@ -283,23 +343,9 @@
 
     </LinearLayout>
 
-    <TimePicker
-        android:id="@+id/timePicker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:timePickerMode="spinner"
-        android:visibility="visible"
-        android:background="#F0F2F1"
-
-        >
-
-    </TimePicker>
-
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
         android:text="확인"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -307,7 +353,7 @@
         android:background="#00897B"
         android:gravity="center"
         android:onClick="clickRepeatCheck"
-        android:layout_below="@+id/id_layout"/>
+        android:layout_alignParentBottom="true"/>
 
 
 </RelativeLayout>
