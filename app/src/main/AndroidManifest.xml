@@ -34,7 +34,8 @@
         <activity android:name=".Sound11Activity" />
         <activity android:name=".Sound12Activity" />
         <activity android:name=".Sound13Activity" />
-        <activity android:name=".AlarmActivity"></activity>
+        <activity android:name=".AlarmActivity">
+        </activity>
     </application>
 
 </manifest>

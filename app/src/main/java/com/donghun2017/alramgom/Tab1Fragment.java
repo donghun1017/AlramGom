@@ -122,13 +122,6 @@ public class Tab1Fragment extends Fragment {
                     Intent intent = new Intent(getActivity(), AlarmActivity.class);
                     PendingIntent pendingIntent = PendingIntent.getActivity(getActivity(), 10, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                    LayoutInflater inflater = getLayoutInflater(Bundle.EMPTY);
-                    View layout = inflater.inflate(R.layout.alarm, null);
-                    builder.setView(layout);
-
-
-
 
 
                     if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){

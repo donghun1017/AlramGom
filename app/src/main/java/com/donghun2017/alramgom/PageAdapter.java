@@ -8,7 +8,7 @@ import android.view.View;
 public class PageAdapter extends FragmentPagerAdapter {
 
     Fragment[] frgs = new Fragment[2];
-    String[] titles = new String[]{"알람", "빗소리"};
+    String[] titles = new String[]{"알람", "마음"};
 
     public PageAdapter(FragmentManager fm) {
         super(fm);

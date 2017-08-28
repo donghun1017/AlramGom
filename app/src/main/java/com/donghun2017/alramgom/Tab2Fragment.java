@@ -24,13 +24,13 @@ public class Tab2Fragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        members.add(new ListViewItem2("비오는 저녁", R.drawable.sound1));
-        members.add(new ListViewItem2("창문의 빗소리", R.drawable.sound2));
-        members.add(new ListViewItem2("낙엽 위의 빗소리", R.drawable.sound3));
-        members.add(new ListViewItem2("폭풍우", R.drawable.sound4));
-        members.add(new ListViewItem2("조용한 바닷가", R.drawable.sound5));
-        members.add(new ListViewItem2("보도 위의 빗소리", R.drawable.sound6));
-        members.add(new ListViewItem2("가벼운 빗소리", R.drawable.sound7));
+        members.add(new ListViewItem2("늦은 저녁", R.drawable.sound1));
+        members.add(new ListViewItem2("숲속", R.drawable.sound2));
+        members.add(new ListViewItem2("밤하늘", R.drawable.sound3));
+        members.add(new ListViewItem2("잔잔한 하루", R.drawable.sound4));
+        members.add(new ListViewItem2("어느 처마 밑", R.drawable.sound5));
+        members.add(new ListViewItem2("하루의 장마", R.drawable.sound6));
+        members.add(new ListViewItem2("궂은 어느 날", R.drawable.sound7));
         members.add(new ListViewItem2("저녁 호숫가", R.drawable.sound8));
         members.add(new ListViewItem2("잔잔한 물결", R.drawable.sound9));
         members.add(new ListViewItem2("텐트 위의 빗소리", R.drawable.sound10));

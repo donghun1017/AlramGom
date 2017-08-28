@@ -34,8 +34,6 @@ public class MainActivity extends AppCompatActivity {
 
     TabLayout tabLayout;
 
-    ArrayList<WakeUpAlarmItem> items = new ArrayList<>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

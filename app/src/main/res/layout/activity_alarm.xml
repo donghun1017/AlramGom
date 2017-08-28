@@ -3,9 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="300dp"
-    android:layout_height="300dp"
+    android:layout_height="200dp"
     android:orientation="vertical"
     android:layout_margin="8dp"
+    android:background="#FFFFFF"
     tools:context="com.donghun2017.alramgom.AlarmActivity">
 
     <LinearLayout
@@ -19,7 +20,12 @@
             android:background="@color/green"
             android:textColor="@color/white"
             android:gravity="center"
-            android:textSize="50sp"/>
+            android:textSize="50sp">
+
+
+
+        </TextView>
+
 
     </LinearLayout>
 

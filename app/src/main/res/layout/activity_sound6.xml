@@ -8,48 +8,74 @@
     tools:context="com.donghun2017.alramgom.Sound6Activity">
 
     <TextView
+        android:id="@+id/titleText"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:gravity="center"
-        android:text="보도 위의 빗소리"
+        android:text="하루의 장마"
         android:textColor="@color/white"
-        android:textSize="36sp" />
+        android:textSize="36sp"/>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:layout_above="@+id/adview">
+    <ToggleButton
+        android:id="@+id/toggle_music"
+        android:layout_width="98dp"
+        android:layout_height="98dp"
+        android:textOn=" "
+        android:textOff=" "
+        android:background="@drawable/toggle_select_sound"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="66dp"
+        android:layout_above="@+id/seekbar1"
+        android:layout_marginBottom="32dp"
+        android:onClick="clickToggle" />
 
-        <ToggleButton
-            android:id="@+id/toggle_music"
-            android:layout_width="78dp"
-            android:layout_height="78dp"
-            android:textOn=" "
-            android:textOff=" "
-            android:background="@drawable/toggle_select_sound"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="82dp"
-            android:onClick="clickToggle" />
+    <ImageView
+        android:id="@+id/toggle_timer"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:src="@drawable/clock"
+        android:layout_marginLeft="66dp"
+        android:layout_marginBottom="16dp"
+        android:layout_above="@+id/seekbar1"
+        android:onClick="clickToggle2"
+        android:visibility="visible"/>
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/clock"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="82dp"/>
+    <ImageView
+        android:id="@+id/toggle_timer_empty"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:src="@drawable/emptyclock"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="66dp"
+        android:layout_marginBottom="16dp"
+        android:layout_above="@+id/seekbar1"
+        android:visibility="visible"/>
 
-        <SeekBar
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/toggle_music"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="30dp"
-            android:max="100"
-            android:progress="10"
-            />
+    <TextView
+        android:id="@+id/timer_text"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:text="00:00"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:layout_marginLeft="83dp"
+        android:layout_marginBottom="30dp"
+        android:layout_above="@+id/seekbar1"
+        android:onClick="clickToggle2"
+        android:visibility="gone"/>
 
-    </RelativeLayout>
+    <SeekBar
+        android:id="@+id/seekbar1"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/adview"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="26dp"
+        android:thumbTint="@color/white"
+        android:progressTint="@color/white"/>
+
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adview"
