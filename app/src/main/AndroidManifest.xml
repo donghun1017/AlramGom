@@ -1,40 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.donghun2017.alramgom">
+    package="com.donghun2017.AlarmGom">
 
     <!-- To access Google+ APIs: -->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/favorite"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/favorite"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.donghun2017.AlarmGom.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RepeatAddActivity" />
-        <activity android:name=".OneOffAddActivity" />
-        <activity android:name=".Sound1Activity" />
-        <activity android:name=".Sound2Activity" />
-        <activity android:name=".Sound3Activity" />
-        <activity android:name=".Sound4Activity" />
-        <activity android:name=".Sound5Activity" />
-        <activity android:name=".Sound6Activity" />
-        <activity android:name=".Sound7Activity" />
-        <activity android:name=".Sound8Activity" />
-        <activity android:name=".Sound9Activity" />
-        <activity android:name=".Sound10Activity" />
-        <activity android:name=".Sound11Activity" />
-        <activity android:name=".Sound12Activity" />
-        <activity android:name=".Sound13Activity" />
-        <activity android:name=".AlarmActivity">
+        <activity android:name="com.donghun2017.AlarmGom.RepeatAddActivity" />
+        <activity android:name="com.donghun2017.AlarmGom.OneOffAddActivity" />
+        <activity android:name="com.donghun2017.AlarmGom.Sound1Activity" />
+        <activity android:name="com.donghun2017.AlarmGom.Sound2Activity" />
+        <activity android:name="com.donghun2017.AlarmGom.Sound3Activity" />
+        <activity android:name="com.donghun2017.AlarmGom.Sound4Activity" />
+        <activity android:name="com.donghun2017.AlarmGom.Sound5Activity" />
+        <activity android:name="com.donghun2017.AlarmGom.Sound6Activity" />
+        <activity android:name="com.donghun2017.AlarmGom.Sound7Activity" />
+        <activity android:name="com.donghun2017.AlarmGom.Sound8Activity" />
+        <activity android:name="com.donghun2017.AlarmGom.Sound9Activity" />
+        <activity android:name="com.donghun2017.AlarmGom.Sound10Activity" />
+        <activity android:name="com.donghun2017.AlarmGom.AlarmActivity">
         </activity>
     </application>
 

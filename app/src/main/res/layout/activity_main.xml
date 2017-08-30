@@ -5,7 +5,7 @@
     android:id="@+id/layout_drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.donghun2017.alramgom.MainActivity">
+    tools:context="com.donghun2017.AlarmGom.MainActivity">
 
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"

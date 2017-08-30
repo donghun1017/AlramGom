@@ -3,16 +3,16 @@
 
     <item
         android:id="@+id/menu_first"
-        android:title="우리 집에 곰이 이사왔다 보기"
+        android:title="아직 개발중입니다."
         android:icon="@android:drawable/star_big_on"/>
 
     <item
         android:id="@+id/menu_second"
-        android:title="앱 평가하기"
+        android:title="양해 부탁드립니다"
         android:icon="@android:drawable/star_big_on"/>
 
     <item
         android:id="@+id/menu_third"
-        android:title="광고보기"
+        android:title="마음부터 이용해주세요"
         android:icon="@android:drawable/star_big_on"/>
 </menu>

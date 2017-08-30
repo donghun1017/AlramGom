@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.donghun2017.alramgom.Tab2Fragment">
+    tools:context="com.donghun2017.AlarmGom.Tab2Fragment">
 
    <ListView
        android:id="@+id/listView2"
