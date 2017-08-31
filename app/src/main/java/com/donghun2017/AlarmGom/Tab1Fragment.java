@@ -13,6 +13,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -48,6 +49,8 @@ public class Tab1Fragment extends Fragment {
     }
 
     @Nullable
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
@@ -107,7 +110,7 @@ public class Tab1Fragment extends Fragment {
                 if(resultCode==RESULT_OK){
                     min= data.getIntExtra("Min", 0);
                     Toast.makeText(getActivity(), formatDate, Toast.LENGTH_SHORT).show();
-                    items.add(new WakeUpAlarmItem(true, formatDate, min+"분 뒤", "아이유", false, false, 1, R.mipmap.ic_launcher));
+                    items.add(new WakeUpAlarmItem(true, formatDate, min+"분 뒤", "아이유", false, false, 1, R.mipmap.favorite));
                     wakeUpAlarmAdapter.notifyDataSetChanged();
 
                     Intent intent = new Intent(getActivity(), AlarmActivity.class);
@@ -116,11 +119,11 @@ public class Tab1Fragment extends Fragment {
 
 
                     if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
-                        alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+min*1000, pendingIntent);
+                        alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+min*60*1000, pendingIntent);
                     }else if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.KITKAT){
-                        alarmManager.setExact(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+min*1000, pendingIntent);
+                        alarmManager.setExact(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+min*60*1000, pendingIntent);
                     }else{
-                        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+min*1000, min*1000, pendingIntent);
+                        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+min*60*1000, min*60*1000, pendingIntent);
                     }
                 }
                 break;

@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import java.util.Calendar;
@@ -54,10 +55,11 @@ public class RepeatAddActivity extends AppCompatActivity {
     }
 
     public void clickRepeatCheck(View v) {
-        Intent intent = getIntent();
-        intent.putExtra("Hour", datetime.get(Calendar.HOUR_OF_DAY));
-        intent.putExtra("Min", datetime.get(Calendar.MINUTE));
-        setResult(RESULT_OK, intent);
+//        Intent intent = getIntent();
+//        intent.putExtra("Hour", datetime.get(Calendar.HOUR_OF_DAY));
+//        intent.putExtra("Min", datetime.get(Calendar.MINUTE));
+//        setResult(RESULT_OK, intent);
+        Toast.makeText(this, "죄송합니다. 개발중입니다^_^", Toast.LENGTH_SHORT).show();
         finish();
     }
 

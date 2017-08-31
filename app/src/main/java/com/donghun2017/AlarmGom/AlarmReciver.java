@@ -30,6 +30,8 @@ public class AlarmReciver extends BroadcastReceiver {
             alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+10*1000, pendingIntent);
         }else if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.KITKAT){
             alarmManager.setExact(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+10*1000, pendingIntent);
+        }else{
+            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+10*1000, 10*1000, pendingIntent);
         }
     }
 }

@@ -1,54 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="300dp"
-    android:layout_height="200dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/galaxy"
     android:orientation="vertical"
-    android:layout_margin="8dp"
-    android:background="#FFFFFF"
     tools:context="com.donghun2017.AlarmGom.AlarmActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:text="5:37 오후"
-            android:background="@color/green"
-            android:textColor="@color/white"
-            android:gravity="center"
-            android:textSize="50sp">
-
-
-
-        </TextView>
-
-
-    </LinearLayout>
-
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2">
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/black">
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:layout_weight="1"
-            android:text="5분 후 알람"
-            android:textSize="20sp"/>
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:layout_weight="1"
-            android:text="확인"
-            android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/clock_currently"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:gravity="center"
+            android:text=" 5:37 오후"
+            android:background="@color/green"
+            android:textColor="@color/white"
+            android:textSize="52sp"></TextView>
 
-    </LinearLayout>
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/clock_currently">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_below="@+id/clock_currently"
+                android:layout_weight="1"
+                android:onClick="clickAlarm5Min"
+                android:text="5분 후 알람"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/idid"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_below="@+id/clock_currently"
+                android:layout_weight="1"
+                android:onClick="clickAlarmCheck"
+                android:text="확인"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
