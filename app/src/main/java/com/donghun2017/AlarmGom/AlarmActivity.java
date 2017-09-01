@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Build;
 import android.os.Vibrator;
 import android.support.v7.app.AlertDialog;
@@ -40,7 +41,7 @@ public class AlarmActivity extends AppCompatActivity{
 
         long now = System.currentTimeMillis();
         Date date = new Date(now);
-        SimpleDateFormat sdfNow = new SimpleDateFormat("HH:mm");
+        SimpleDateFormat sdfNow = new SimpleDateFormat("a HH:mm");
         textView.setText(sdfNow.format(date).toString());
     }
 

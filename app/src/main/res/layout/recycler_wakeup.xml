@@ -37,7 +37,8 @@
             android:text="특정일\n알람해제"
             android:layout_marginTop="6dp"
             android:background="@drawable/bg_border_stroke2"
-            android:layout_marginRight="8dp"/>
+            android:layout_marginRight="8dp"
+            />
 
         <CheckBox
             android:id="@+id/checkBox"
