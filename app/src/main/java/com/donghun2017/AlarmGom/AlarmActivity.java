@@ -67,4 +67,11 @@ public class AlarmActivity extends AppCompatActivity{
 
 
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        vibrator.cancel();
+        finish();
+    }
 }
