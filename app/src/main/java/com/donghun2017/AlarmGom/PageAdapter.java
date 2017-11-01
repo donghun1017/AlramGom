@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 public class PageAdapter extends FragmentPagerAdapter {
 
     Fragment[] frgs = new Fragment[2];
-    String[] titles = new String[]{"알람", "마음"};
+    String[] titles = new String[]{"알람", "음악"};
 
     public PageAdapter(FragmentManager fm) {
         super(fm);

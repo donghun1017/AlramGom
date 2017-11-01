@@ -62,10 +62,6 @@ public class ListViewAdapter2 extends BaseAdapter {
         textView.setText(title);
         Glide.with(convertView).load(titleImg).into(circleImageView);
 
-
-        /////////////여기부터임
-
-
         return convertView;
     }
 }

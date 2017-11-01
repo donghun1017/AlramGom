@@ -54,7 +54,6 @@ public class Tab1Fragment extends Fragment {
         openner = new DBOpenner(getActivity(), tableName, null, 1);
         db=openner.getWritableDatabase();
 
-
     }
 
     @Nullable
@@ -68,13 +67,13 @@ public class Tab1Fragment extends Fragment {
         cursorAdapter = new MyCursorAdapter(getActivity(), R.layout.recycler_wakeup, cursor, new String[]{"min"}, new int[]{R.id.week}, 0);
         listView.setAdapter(cursorAdapter);
 
-
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getActivity(), "클릭", Toast.LENGTH_SHORT).show();
             }
         });
+
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {

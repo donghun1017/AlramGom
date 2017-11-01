@@ -19,7 +19,7 @@ public class AlarmReciver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
- 
+
         Toast.makeText(context, new Date().toString(), Toast.LENGTH_SHORT).show();
 
         AlarmManager alarmManager = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
@@ -34,4 +34,6 @@ public class AlarmReciver extends BroadcastReceiver {
             alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()+10*1000, 10*1000, pendingIntent);
         }
     }
+
+
 }

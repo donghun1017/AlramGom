@@ -43,6 +43,8 @@ public class AlarmActivity extends AppCompatActivity{
         Date date = new Date(now);
         SimpleDateFormat sdfNow = new SimpleDateFormat("a HH:mm");
         textView.setText(sdfNow.format(date).toString());
+
+        //
     }
 
     public void clickAlarmCheck(View v){
